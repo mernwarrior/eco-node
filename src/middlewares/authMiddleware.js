@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 import User from "../models/userModel.js";
 
 export const protect = async (req, res, next) => {
-  console.log("Headers:", req.headers);
+  //console.log("Headers:", req.headers);
   let token;
 
   if (
@@ -19,6 +19,6 @@ export const protect = async (req, res, next) => {
     }
   }
 
-  console.log("No token found");
+  //console.log("No token found");
   return res.status(401).json({ message: "Not authorized, no token" });
 };
