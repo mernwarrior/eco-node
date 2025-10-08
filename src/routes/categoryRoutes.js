@@ -22,7 +22,6 @@ router.post(
   protect,
   createCategory
 );
-
 // Update (image optional)
 router.put(
   "/:id",
@@ -31,10 +30,7 @@ router.put(
   validate(categoryValidation),
   updateCategory
 );
-
-// List with pagination: ?page=1&limit=10&search=shirt&sortBy=name&sortOrder=asc&active=true
 router.get("/", protect, listCategories);
-
 router.get("/:id", protect, getCategoryById);
 router.delete("/:id", protect, deleteCategory);
 
