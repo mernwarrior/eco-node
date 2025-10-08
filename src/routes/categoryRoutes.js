@@ -19,19 +19,19 @@ router.post(
   "/",
   uploadSubCategoryImage.single("image"),
   validate(categoryValidation),
-  protect,
+  
   createCategory
 );
 // Update (image optional)
 router.put(
   "/:id",
   uploadSubCategoryImage.single("image"),
-  protect,
+ 
   validate(categoryValidation),
   updateCategory
 );
-router.get("/", protect, listCategories);
-router.get("/:id", protect, getCategoryById);
-router.delete("/:id", protect, deleteCategory);
+router.get("/",  listCategories);
+router.get("/:id",  getCategoryById);
+router.delete("/:id", deleteCategory);
 
 export default router;
